@@ -1,11 +1,9 @@
 import axios from "axios";
 
-const SERVER_URL = "http://localhost:3001";
-
 const serverRequest = async (url, params, success, error) => {
   try {
     await axios
-      .post(`${SERVER_URL}/${url}`, params)
+      .post(`${process.env.REACT_APP_API_URL}/${url}`, params)
       .then((response) => {
         const data = response.data;
         success(data);
@@ -27,7 +25,7 @@ const serverRequest = async (url, params, success, error) => {
 const serverRequestFormData = async (url, formData, success, error) => {
   try {
     await axios
-      .post(`${SERVER_URL}/${url}`, formData, {
+      .post(`${process.env.REACT_APP_API_URL}/${url}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

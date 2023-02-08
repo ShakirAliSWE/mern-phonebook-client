@@ -19,7 +19,9 @@ const contactsSlice = createSlice({
 });
 
 export const fetchContacts = createAsyncThunk("setContacts", async () => {
-  const response = await axios.post("http://localhost:3001/contacts");
+  const response = await axios.post(
+    `${process.env.REACT_APP_API_URL}/contacts`
+  );
   return response?.data?.data;
 });
 

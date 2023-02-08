@@ -42,7 +42,7 @@ export default function ContactView() {
       <ContactBanner
         profileURL={
           contact.profileURL
-            ? `http://localhost:3001/${contact?.profileURL}`
+            ? `${process.env.REACT_APP_API_URL}/${contact?.profileURL}`
             : null
         }
       />

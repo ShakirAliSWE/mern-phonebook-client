@@ -17,7 +17,7 @@ export default function ContactCard({ contact = {} }) {
             <img
               src={
                 contact.profileURL
-                  ? `http://localhost:3001/${contact.profileURL}`
+                  ? `${process.env.REACT_APP_API_URL}/${contact.profileURL}`
                   : `https://fakeimg.pl/300/`
               }
               className="img-fluid rounded-circle shadow"
