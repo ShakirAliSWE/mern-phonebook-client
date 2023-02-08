@@ -1,4 +1,5 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const serverRequest = async (url, params, success, error) => {
   try {
@@ -9,6 +10,7 @@ const serverRequest = async (url, params, success, error) => {
         success(data);
       })
       .catch((err) => {
+        toast.error(err.message);
         console.log(
           `Error - serverRequest - ${url} : `,
           err.message,
@@ -35,6 +37,7 @@ const serverRequestFormData = async (url, formData, success, error) => {
         success(data);
       })
       .catch((err) => {
+        toast.error(err.message);
         console.log(
           `Error - serverRequest - ${url} : `,
           err.message,

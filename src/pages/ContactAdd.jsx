@@ -4,7 +4,7 @@ import { ContactBannerEdit } from "../components";
 import { serverRequestFormData } from "../utils";
 import { useDispatch } from "react-redux";
 import { fetchContacts } from "../redux/contactsSlice";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const ContactField = ({
@@ -63,7 +63,6 @@ export default function ContactAdd() {
 
   return (
     <>
-      <Toaster />
       <form onSubmit={handleSubmit(formSubmit)}>
         <ContactBannerEdit
           profileURL={profileURL}
